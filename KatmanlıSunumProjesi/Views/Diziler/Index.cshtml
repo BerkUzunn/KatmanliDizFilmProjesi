@@ -1,0 +1,85 @@
+﻿@model IEnumerable<KatmanlıModel.Model.Diziler>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DiziId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiziAdı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiziAcıklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiziYönetmen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiziYıl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiziTür)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiziPuan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiziYayıncı)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiziId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiziAdı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiziAcıklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiziYönetmen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiziYıl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiziTür)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiziPuan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiziYayıncı)
+            </td>
+          
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.DiziId }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.DiziId }, new { @class = "btn btn-danger" })
+           
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

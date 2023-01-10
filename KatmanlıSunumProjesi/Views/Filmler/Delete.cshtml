@@ -1,0 +1,75 @@
+﻿@model KatmanlıModel.Model.Filmler
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Filmler</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FilmId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FilmId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FilmAdı)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FilmAdı)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FilmAcıklma)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FilmAcıklma)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FilmYönetmen)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FilmYönetmen)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FilmYıl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FilmYıl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FilmTür)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FilmTür)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FilmPuan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FilmPuan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Yayıncı)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Yayıncı)
+        </dd>
+     
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,70 @@
+﻿@model KatmanlıModel.Model.Diziler
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Diziler</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          
+            <div class="form-group">
+                <label asp-for="DiziAdı" class="control-label"></label>
+                <input asp-for="DiziAdı" class="form-control" />
+                <span asp-validation-for="DiziAdı" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiziAcıklama" class="control-label"></label>
+                <input asp-for="DiziAcıklama" class="form-control" />
+                <span asp-validation-for="DiziAcıklama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiziYönetmen" class="control-label"></label>
+                <input asp-for="DiziYönetmen" class="form-control" />
+                <span asp-validation-for="DiziYönetmen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiziYıl" class="control-label"></label>
+                <input asp-for="DiziYıl" class="form-control" />
+                <span asp-validation-for="DiziYıl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiziTür" class="control-label"></label>
+                <input asp-for="DiziTür" class="form-control" />
+                <span asp-validation-for="DiziTür" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiziPuan" class="control-label"></label>
+                <input asp-for="DiziPuan" class="form-control" />
+                <span asp-validation-for="DiziPuan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiziYayıncı" class="control-label"></label>
+                <input asp-for="DiziYayıncı" class="form-control" />
+                <span asp-validation-for="DiziYayıncı" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<KatmanlıModel.Model.FilmYorumlar>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ListeNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yorumlar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmPuan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KullanıcıId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ListeNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yorumlar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmPuan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KullanıcıId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.KullanıcıId },new { @class="btn btn-warning"}) |
+               
+                @Html.ActionLink("Delete", "Delete", new {  id=item.KullanıcıId  },new { @class="btn btn-danger"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

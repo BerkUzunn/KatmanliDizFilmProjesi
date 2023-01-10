@@ -1,0 +1,85 @@
+﻿@model IEnumerable<KatmanlıModel.Model.Filmler>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmAdı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmAcıklma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmYönetmen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmYıl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmTür)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmPuan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yayıncı)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmAdı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmAcıklma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmYönetmen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmYıl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmTür)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmPuan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yayıncı)
+            </td>
+           
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.FilmId }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FilmId }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FilmId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

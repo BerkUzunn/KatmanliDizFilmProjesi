@@ -1,0 +1,59 @@
+﻿@model IEnumerable<KatmanlıModel.Model.Kullanıcı>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KullanıcıId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KullanıcıAdı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KullanıcıSifre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KullanıcıUlke)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KullanıcıId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KullanıcıAdı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KullanıcıSifre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KullanıcıUlke)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.KullanıcıId },new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Details", "Details", new { id=item.KullanıcıId}, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.KullanıcıId  }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

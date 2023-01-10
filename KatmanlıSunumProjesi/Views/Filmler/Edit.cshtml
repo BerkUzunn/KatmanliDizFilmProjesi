@@ -1,0 +1,74 @@
+﻿@model KatmanlıModel.Model.Filmler
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Filmler</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FilmId" class="control-label"></label>
+                <input asp-for="FilmId" class="form-control" />
+                <span asp-validation-for="FilmId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmAdı" class="control-label"></label>
+                <input asp-for="FilmAdı" class="form-control" />
+                <span asp-validation-for="FilmAdı" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmAcıklma" class="control-label"></label>
+                <input asp-for="FilmAcıklma" class="form-control" />
+                <span asp-validation-for="FilmAcıklma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmYönetmen" class="control-label"></label>
+                <input asp-for="FilmYönetmen" class="form-control" />
+                <span asp-validation-for="FilmYönetmen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmYıl" class="control-label"></label>
+                <input asp-for="FilmYıl" class="form-control" />
+                <span asp-validation-for="FilmYıl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmTür" class="control-label"></label>
+                <input asp-for="FilmTür" class="form-control" />
+                <span asp-validation-for="FilmTür" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmPuan" class="control-label"></label>
+                <input asp-for="FilmPuan" class="form-control" />
+                <span asp-validation-for="FilmPuan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yayıncı" class="control-label"></label>
+                <input asp-for="Yayıncı" class="form-control" />
+                <span asp-validation-for="Yayıncı" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
